@@ -1,9 +1,17 @@
 " Technically a model
-function CreateStateObject( pathsArray=[] )
+function CreateStateObject( pathsArray=[], options={} )
+    let actualOptions = !empty(a:options) ? options : GetDefaultOptions()
     return { 
                 \ "files" : a:pathsArray, 
-                \ "currentFile" : "" 
+                \ "currentFile" : "",
+                \ "options" : actualOptions
                 \ }
+endfunction
+
+function GetDefaultOptions()
+    return {
+                \"paddingSpaces" : 4
+    \}
 endfunction
 
 " Advance state and return current exercise
