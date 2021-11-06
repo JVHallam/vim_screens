@@ -1,4 +1,4 @@
-exec "source ./src/index.vim"
+" All dependencies are handled by the invoking script.
 
 let filePaths = globpath('./resources/exercises', "*")->split("\n")
 echo filePaths

@@ -1,7 +1,3 @@
-exec "source ./src/keys.vim"
-exec "source ./src/stateManagement.vim"
-exec "source ./src/screenManagement.vim"
-
 " Inits a state object, but also the current buffer gets setup as expected
 " pathsArray contains all the file paths i want it to swing us between
 " Remap the keys required for this to work
