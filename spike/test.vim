@@ -7,7 +7,6 @@ let g:hintPath = "contents/hint/"
 let g:scriptPath = "contents/vimscript/"
 
 
-
 " Read the hint file into the current file
 function AppendHint( hintPath )
     if( filereadable(a:hintPath) )
