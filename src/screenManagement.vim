@@ -26,8 +26,9 @@ endfunction
 
 function AddMessage( valuesArray, message )
     let paddingSpaces = g:obj["options"]["paddingSpaces"]
+    let paddingPrefix = g:obj["options"]["paddingPrefix"]
 
-    let paddingString = ""
+    let paddingString = "" . paddingPrefix
     for i in range( paddingSpaces )
         let paddingString = paddingString . " "
     endfor

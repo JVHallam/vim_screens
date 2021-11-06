@@ -10,7 +10,8 @@ endfunction
 
 function GetDefaultOptions()
     return {
-                \"paddingSpaces" : 4
+                \"paddingSpaces" : 4,
+                \"paddingPrefix" : ''
     \}
 endfunction
 
