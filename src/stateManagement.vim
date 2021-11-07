@@ -1,6 +1,6 @@
 " Technically a model
 function CreateStateObject( pathsArray=[], options={} )
-    let actualOptions = !empty(a:options) ? options : GetDefaultOptions()
+    let actualOptions = !empty(a:options) ? a:options : GetDefaultOptions()
     return { 
                 \ "files" : a:pathsArray, 
                 \ "currentFile" : "",
