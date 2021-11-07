@@ -25,14 +25,15 @@ function AddPadding( valuesArray )
 endfunction
 
 function AddMessage( valuesArray, message )
-    let paddingSpaces = g:obj["options"]["paddingSpaces"]
+    let paddingSpaceCount = g:obj["options"]["paddingSpaces"]
+
     let paddingPrefix = g:obj["options"]["paddingPrefix"]
 
-    let paddingString = "" . paddingPrefix
-    for i in range( paddingSpaces )
-        let paddingString = paddingString . " "
-    endfor
+    let paddingSpaces = range( paddingSpaceCount )->reduce({a -> a . " "}, "")
+
+    let paddingString = paddingPrefix . paddingSpaces
 
     let newValuesArray = a:valuesArray + [ "", "", paddingString . a:message ]
+
     return newValuesArray
 endfunction
