@@ -5,7 +5,10 @@ function ClearBuffer( startLine=1 )
 endfunction
 
 " Copy the file contents into the current buffer
+" Maintain the cursor's position too
 function RenderExercise( templatePath="", messageString="" )
+    let currentCursorRow = getcurpos()[1]
+
     let values = readfile( a:templatePath )
     let values = AddPadding( values )
 
@@ -16,6 +19,8 @@ function RenderExercise( templatePath="", messageString="" )
     call setline( 1, values )
 
     call ClearBuffer( len(values) + 1 )
+
+    call cursor([currentCursorRow, 0])
 endfunction
 
 " - Private -------------------------------------------------------------

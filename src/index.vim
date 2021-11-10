@@ -10,7 +10,7 @@ endfunction
 
 
 function Advance()
-    call ClearBuffer()
+
     let nextExercisePath = AdvanceState()
 
     if( empty(nextExercisePath) )
@@ -20,11 +20,11 @@ function Advance()
     let progressString = GetProgressMessage()
 
     call RenderExercise( nextExercisePath, progressString )
+
 endfunction
 
 " Goes back to the previous screen
 function Regress()
-    call ClearBuffer()
     let nextExercisePath = RegressState()
 
     if( empty(nextExercisePath) )
